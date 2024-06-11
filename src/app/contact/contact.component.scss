@@ -1,15 +1,19 @@
 
-section{
-    width: 100vw;
-    height: 100vh;
-}
-.container-fluid{
-    background-image:linear-gradient(rgba(230, 207, 6, 0.5),rgba(230, 207, 6, 0.5));
-    box-shadow: 10px 10px 10px 10px #888888;
-    width: 700px;
-    height: 500px;
+.container-fluid {
+  width: 100vw;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-h1{   
-    font-family: 'Rubik Moonrocks', cursive;
+.form-down {
+  margin-top: 150px;
+  width: 60vw;
 }
+
+.card {
+  border: 3px;
+}
+

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  backgroundColor: string = 'black';
+  // loginForm!: FormGroup;
+  public validate = false;
+  
+  public submit() {
+    this.validate = !this.validate;
+  }
+
 
 }
