@@ -2,48 +2,72 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center ">
             <div class="col-sm-4  form-down">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title class="text-center">Shivani B</mat-card-title>
+                        <mat-card-subtitle>Creater Director/Lead Photographer</mat-card-subtitle>
+                    </mat-card-header>
+                    <img src="../../assets/4.jpg" class="rdg">
+                    <mat-card-content>
+                        <p>
+                            shiva
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+
                 <div class="card">
                     <div class="mt-3">
                         <h2 class="d-flex justify-content-center">Get Family Portrait</h2>
                         <h5 class="d-flex justify-content-center">from any Enquiries</h5>
                     </div>
                     <div class="card-body ">
-                        <form class="needs-validation" novalidate [ngClass]="{ 'was-validated': validate }">
+                        <form #contactForm="ngForm">
+                            <div class="row d-flex justify-content-end">
+                                <div class="col-sm-2 mt-3">
+                                    <select class="form-control" id="salutation" name="salutation"
+                                        [(ngModel)]="formData.salutation" required>
+                                        <option value="" disabled selected>Mr/Ms.</option>
+                                        <option value="Mr">Mr</option>
+                                        <option value="Ms">Ms</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-5 mt-3">
+                                    <input class="form-control" id="Name" name="Name" type="text"
+                                        [(ngModel)]="formData.name" required #name="ngModel" placeholder="Your name" />
+                                    <div *ngIf="name.invalid && name.touched" class="text-danger">
+                                        Name is required.
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row d-flex justify-content-end">
-                                <div class="col-sm-8 mt-3">
+                                <label class="col-sm-3 col-form-label text-sm-end mt-3">Shoot Session</label>
+                                <div class="col-sm-2 mt-3">
+                                    <input class="form-control" id="validationCustom02" type="text" required="" />
+                                </div>
+                                <div class="col-sm-5 mt-3">
                                     <input class="form-control" id="validationCustom02" type="text" required="" />
                                 </div>
                             </div>
-
-                    
-                          
-                           
 
                             <div class="row d-flex justify-content-end">
-                                <div class="col-sm-6 mt-3">
+                                <div class="col-sm-5 mt-3">
+                                    <input class="form-control" id="Email" name="Email" [(ngModel)]="formData.email"
+                                        type="text" required="" />
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-end mb-5">
+                                <div class="col-sm-5 mt-3">
                                     <input class="form-control" id="validationCustom02" type="text" required="" />
                                 </div>
                             </div>
-
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-6 mt-3">
-                                    <input class="form-control" id="validationCustom02" type="text" required="" />
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-center mb-5">
-                                <div class="col-sm-6 mt-3">
-                                    <input class="form-control" id="validationCustom02" type="text" required="" />
-                                </div>
-                            </div>
-                            
-                           
                         </form>
                     </div>
                 </div>
                 <!-- submit button -->
                 <div class="col-sm-9 offset-sm-3 text-end mt-2">
-                    <button class="btn btn-warning txt-color" type="button" (click)="submit()">Submit</button>
+                    <button class="btn btn-warning txt-color" type="submit"
+                        (click)="submit(contactForm)">Submit</button>
                 </div>
             </div>
         </div>

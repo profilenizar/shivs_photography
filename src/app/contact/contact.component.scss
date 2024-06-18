@@ -1,8 +1,6 @@
-
 .container-fluid {
   width: 100vw;
   min-height: 100vh;
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,10 +8,44 @@
 
 .form-down {
   margin-top: 150px;
-  width: 60vw;
+  max-width: 100%;
+  width: 50%;
 }
 
-.card {
-  border: 3px;
+
+.example-card {
+  max-width: 200px;
+  position: absolute;
+  z-index: 1;
 }
 
+
+.rdg {
+  height: 300px;
+}
+
+@media (max-width: 768px) {
+  .form-down {
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .card {
+    margin-left: 0;
+  }
+
+  .example-card {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .photo-container {
+    position: relative;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}

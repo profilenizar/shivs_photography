@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -7,12 +8,24 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
   backgroundColor: string = 'black';
-  // loginForm!: FormGroup;
-  public validate = false;
-  
-  public submit() {
-    this.validate = !this.validate;
+
+  formData = {
+    salutation: '',
+    name: '',
+    email: ''
   }
 
+  submit(contactForm: any) {
+    if (contactForm.valid) {
+      console.log('Form Data:', this.formData);
+    } else {
+      Object.keys(contactForm.controls).forEach(controlName => {
+        contactForm.controls[controlName].markAsTouched();
+      });
+    }
+    console.log(this.formData)
+  }
 
 }
+
+
